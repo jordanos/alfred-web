@@ -1,6 +1,6 @@
 # 🤖 AI customer support web
 
-This is the web client for (ai-customer-support)[https://github.com/jordanos/ai-customer-support] API.
+This is the web client for [ai-customer-support](https://github.com/jordanos/ai-customer-support) API.
 
 ## Quick Install
 
@@ -26,7 +26,7 @@ We are using [pnpm](https://pnpm.io/) to manage our dependencies and we suggest 
 - React testing library (Unit and Integration testing)
 - Playwright (E2E testing)
 - Sentry (Error and performance reporting)
-- Husky (Linting and tests on local every time a commit is made)
+- Husky (Linting and running tests on local environment every time a commit is made)
 - CodeQL (CI for checking code quality and vulnerability)
 
 ## Features

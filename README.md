@@ -1,113 +1,41 @@
-# Drop-in Replacement for [CRA](http://create-react-app.dev/) but powered by [Vite](https://vitejs.dev/)
+# 🤖 AI customer support web
 
-### Things in CRA, supported here:
+This is the web client for (ai-customer-support)[https://github.com/jordanos/ai-customer-support] API.
 
-- Import SVG's directly as React Component via SVGR
-- Unit Testing via Jest & React Testing Library
-- ESLint Rules & Prettier
-- Tailwind
-- Absolute imports within `src` directory
+## Quick Install
 
----
+We are using [pnpm](https://pnpm.io/) to manage our dependencies and we suggest you do the same.
 
-### Extra Additions
+- `pnpm install` will install all dependencies required to run the system.
+- `pnpm start` will start and serve the webapp on port `3000`.
 
-- Conventional Commits using `Commitlint`
-- Run Lint Checks, TS Checks, Formatting & Unit Tests in Pre-commit via `lintstaged` & `husky`
 
----
+## 🚀 Building for production
 
-### Usage (with [degit](https://github.com/Rich-Harris/degit))
+- `pnpm build` will build the code and store it in the `./build` directory.
+- You can use nginx or other static webserver to serve what's in the build folder.
 
-```bash
-degit uchihamalolan/vite-react-ts your-app-name
-```
+## Technologies
+- ReactJs
+- Vite (Bootstraping reactjs project)
+- Material UI (Style and theme)
+- React-router-dom (Routing)
+- Redux (State management)
+- Rtk-query (API requests)
+- React-hook-forms (Form)
+- React testing library (Unit and Integration testing)
+- Playwright (E2E testing)
+- Sentry (Error and performance reporting)
+- Husky (Linting and tests on local every time a commit is made)
+- CodeQL (CI for checking code quality and vulnerability)
 
----
+## Features
+- Authentication (Social auth)
+- Route guarding
+- Chatting playground
+- Dark and Light theme
 
-### Tech Stack - Overview
+## 💁 Contributing
 
-- Vite
-- React - Typscript
-  - react-error-boundary
-- pnpm
-
----
-
-### Editor Config
-
-- vscode settings & extension recommendations
-- `.editorconfig` file
-
----
-
-### Lint and Formatting
-
-- Eslint & Prettier Configured
-- Lints
-  - react
-  - react hooks
-  - typescript
-  - jsx-a11y
-
----
-
-### Testing
-
-- Jest + React Testing Library (plus some plugins)
-
----
-
-### Styling
-
-- TailwindCSS v3
-
----
-
-# Other Recommended Libraries:
-
-### Forms
-
-- React Hook Form
-- Zod (for validations)
-
-### CSS-in-js
-
-- Emotion
-- Complie Time Atomic CSS-in-Js
-  - Stylex (Facebook, not Open Source yet)
-  - Linaria
-  - Compiled (still in beta)
-
-### Routing
-
-- React-Router-Dom
-- React Location
-
-### Date Manipulation
-
-- Dayjs
-- date-fns
-- Luxon
-
-### HTTP Client
-
-- Ky
-- Axios
-
-### Global Store (full-blown / lite-version)
-
-- Redux Toolkit / Zustand
-- Recoil / Jotai
-- Mobx / Valtio
-- xstate / robot
-
-### Server State
-
-- React Query
-- SWR
-- RTKQuery
-
-<!-- ### Eslint Plugins
-- [eslint-plugin-jest-dom](https://testing-library.com/docs/ecosystem-eslint-plugin-jest-dom)
-- [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) -->
+Before you start contributing please read the requirements [here](./CONTRIBUTING.md).
+Thank you and happy codding☕️!

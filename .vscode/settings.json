@@ -3,5 +3,6 @@
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.formatOnSave": true,
   "prettier.documentSelectors": ["*.{tsx,ts}", "*.{jsx,js}"],
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.workingDirectories": ["."]
 }

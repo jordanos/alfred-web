@@ -16,7 +16,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
-    "types": ["vite-plugin-svgr/client", "jest"]
+    "types": ["vite-plugin-svgr/client", "jest"],
+    "typeRoots": ["./typings", "./node_modules/@types/"]
   },
-  "include": ["./src"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

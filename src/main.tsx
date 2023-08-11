@@ -3,6 +3,7 @@ import App from 'app';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { store } from 'store';
 import 'styles/font.css';
 
@@ -12,8 +13,10 @@ if (container) {
   root.render(
     <StrictMode>
       <Provider store={store}>
-        <CssBaseline />
-        <App />
+        <Router>
+          <CssBaseline />
+          <App />
+        </Router>
       </Provider>
     </StrictMode>
   );

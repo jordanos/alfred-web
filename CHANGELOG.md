@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- New changes go on top. But below these comments. -->
 
-<!-- We can track changes from Git logs, so why we needs this file? 
+<!-- We can track changes from Git logs, so why we needs this file?
 
 Guiding Principles
 - Changelogs are for humans, not machines.
@@ -33,6 +33,7 @@ Types of changes
 ### Added
 
 - Basic reactjs app
+- State management
 
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD -->
 [unreleased]: https://github.com/jordanos/ai-customer-support-web/

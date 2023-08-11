@@ -1,8 +1,10 @@
-import { createRoot } from 'react-dom/client';
-import { StrictMode } from 'react';
+import { CssBaseline } from '@mui/material';
 import App from 'app';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from 'store';
+import 'styles/font.css';
 
 const container = document.getElementById('root');
 if (container) {
@@ -10,6 +12,7 @@ if (container) {
   root.render(
     <StrictMode>
       <Provider store={store}>
+        <CssBaseline />
         <App />
       </Provider>
     </StrictMode>

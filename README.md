@@ -9,13 +9,13 @@ We are using [pnpm](https://pnpm.io/) to manage our dependencies and we suggest 
 - `pnpm install` will install all dependencies required to run the system.
 - `pnpm start` will start and serve the webapp on port `3000`.
 
-
 ## 🚀 Building for production
 
 - `pnpm build` will build the code and store it in the `./build` directory.
 - You can use nginx or other static webserver to serve what's in the build folder.
 
 ## Technologies
+
 - ReactJs
 - Vite (Bootstraping reactjs project)
 - Material UI (Style and theme)
@@ -30,6 +30,7 @@ We are using [pnpm](https://pnpm.io/) to manage our dependencies and we suggest 
 - CodeQL (CI for checking code quality and vulnerability)
 
 ## Features
+
 - Authentication (Social auth)
 - Route guarding
 - Chatting playground

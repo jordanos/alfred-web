@@ -14,6 +14,7 @@ Please follow the checked-in pull request template when opening pull requests. N
 maintainers.
 
 It's essential that we maintain great documentation and testing. If you:
+
 - Fix a bug
   - Add a relevant unit or integration test when possible. These live in `tests/unit_tests` and `tests/integration_tests`.
 - Make an improvement
@@ -21,7 +22,6 @@ It's essential that we maintain great documentation and testing. If you:
   - Update unit and integration tests when relevant.
 - Add a feature
   - Add unit and integration tests.
-
 
 ### 🚩GitHub Issues
 
@@ -43,5 +43,5 @@ It's essential that we maintain great documentation and testing. If you:
 ### Testing
 
 - We are using react testing library and jest for unit and itegration tests.
-- Playwright for e2e tests. 
+- Playwright for e2e tests.
 - To run all unit tests please use `pnpm test`.

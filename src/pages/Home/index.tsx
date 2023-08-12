@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { FC } from 'react';
 
-const index: FC = () => {
+const Home: FC = () => {
   return (
     <Typography variant="h4" sx={{ width: '100%' }}>
       Home page
@@ -9,4 +9,4 @@ const index: FC = () => {
   );
 };
 
-export default index;
+export default Home;

@@ -34,6 +34,9 @@ Types of changes
 
 - Basic reactjs app
 - State management
+- Router setup
+- Toasting messages
+
 
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD -->
 

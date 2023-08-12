@@ -53,13 +53,21 @@
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/comma-dangle": "off",
     "import/prefer-default-export": "off",
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    "object-curly-newline": "off"
   },
   "overrides": [
     {
       // enable eslint-plugin-testing-library rules or preset only for matching files!
-      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-      "extends": ["plugin:jest/recommended", "plugin:jest-dom/recommended", "plugin:testing-library/react"]
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react"
+      ]
     }
   ],
   "settings": {

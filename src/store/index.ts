@@ -12,6 +12,8 @@ export const store: ToolkitStore = configureStore({
     app: appReducer,
     routing: routingReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat(apiSlice.middleware);
+  },
   devTools: true,
 });

@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Wrapper from 'components/layout/Wrapper/Wrapper';
+import { Toaster } from 'components/toast';
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { noAsidePages } from 'routes/menu';
@@ -18,6 +19,7 @@ const App: FC = () => {
           {/* <Route path="*" element={<Aside />} /> */}
         </Routes>
         <Wrapper />
+        <Toaster position="bottom-left" />
       </Box>
     </ThemeProvider>
   );

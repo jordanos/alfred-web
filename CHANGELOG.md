@@ -36,6 +36,7 @@ Types of changes
 - State management
 - Router setup
 - Toasting messages
+- Landing page
 
 
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD -->

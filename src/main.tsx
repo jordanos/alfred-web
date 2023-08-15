@@ -1,4 +1,3 @@
-import { CssBaseline } from '@mui/material';
 import App from 'app';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -14,7 +13,6 @@ if (container) {
     <StrictMode>
       <Provider store={store}>
         <Router>
-          <CssBaseline />
           <App />
         </Router>
       </Provider>

@@ -37,7 +37,6 @@ Types of changes
 - Router setup
 - Toasting messages
 
-
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD -->
 
 [unreleased]: https://github.com/jordanos/ai-customer-support-web/

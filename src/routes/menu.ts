@@ -11,10 +11,10 @@ export const innerPages: PagesType = {};
 export const commonPages: PagesType = {};
 
 export const publicPages: PagesType = {
-  home: {
-    id: 'welcome',
-    text: 'Welcome',
-    path: '/welcome',
+  landing: {
+    id: 'landing',
+    text: 'landing',
+    path: '/',
   },
 };
 

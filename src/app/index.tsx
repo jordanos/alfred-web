@@ -1,16 +1,19 @@
-import { Box } from '@mui/material';
+import { Box, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Wrapper from 'components/layout/Wrapper/Wrapper';
 import { Toaster } from 'components/toast';
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { noAsidePages } from 'routes/menu';
+import { themeOptions } from './theme';
 
-export const theme = createTheme();
+export const theme = createTheme(themeOptions);
 
 const App: FC = () => {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
+
       <Box sx={{ display: 'flex', height: '100vh', width: '100%' }}>
         <Routes>
           {noAsidePages.map((path) => (
@@ -19,8 +22,8 @@ const App: FC = () => {
           {/* <Route path="*" element={<Aside />} /> */}
         </Routes>
         <Wrapper />
-        <Toaster position="bottom-left" />
       </Box>
+      <Toaster position="bottom-left" />
     </ThemeProvider>
   );
 };

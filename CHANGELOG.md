@@ -38,7 +38,6 @@ Types of changes
 - Toasting messages
 - Landing page
 
-
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD -->
 
 [unreleased]: https://github.com/jordanos/ai-customer-support-web/

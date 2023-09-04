@@ -39,6 +39,7 @@ const Services: FC = () => {
       <Box>
         {services.map((service, index) => (
           <ServicesCard
+            key={service.id}
             {...service}
             alignment={index % 2 === 0 ? 'right' : 'left'}
           />

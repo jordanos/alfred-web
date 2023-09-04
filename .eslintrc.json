@@ -54,7 +54,8 @@
     "@typescript-eslint/comma-dangle": "off",
     "import/prefer-default-export": "off",
     "import/no-cycle": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "react/jsx-wrap-multilines": "off"
   },
   "overrides": [
     {

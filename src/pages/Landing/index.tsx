@@ -3,7 +3,6 @@ import { FC } from 'react';
 import AnchorNav from 'react-single-page-navigation';
 import AboutUs from './AboutUs';
 import Community from './Community';
-import HowItWorks from './HowItWorks';
 import Nav from './Nav';
 import Services from './Services';
 
@@ -13,9 +12,6 @@ export const elements: { [key: string]: { label: string } } = {
   },
   Services: {
     label: 'Services',
-  },
-  HowItWorks: {
-    label: 'How it works',
   },
   Community: {
     label: 'Community',
@@ -36,10 +32,6 @@ const Home: FC = () => {
 
             <section ref={refs.Services}>
               <Services />
-            </section>
-
-            <section ref={refs.HowItWorks}>
-              <HowItWorks />
             </section>
 
             <section ref={refs.Community}>

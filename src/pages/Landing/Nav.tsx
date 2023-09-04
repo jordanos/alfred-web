@@ -33,6 +33,7 @@ const Nav: FC<Props> = ({ activeElement, goTo }) => {
 
             return (
               <Box
+                key={key}
                 onClick={() => {
                   goTo(key);
                 }}

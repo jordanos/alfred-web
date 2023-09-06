@@ -3,6 +3,7 @@ import { FC } from 'react';
 import AnchorNav from 'react-single-page-navigation';
 import AboutUs from './AboutUs';
 import Community from './Community';
+import Footer from './Footer';
 import Nav from './Nav';
 import Services from './Services';
 
@@ -20,7 +21,7 @@ export const elements: { [key: string]: { label: string } } = {
 
 const Home: FC = () => {
   return (
-    <Container maxWidth="xl" sx={{ maxWidth: '100vw' }}>
+    <Container maxWidth="xl">
       <AnchorNav elements={elements}>
         {({ refs, activeElement, goTo }) => (
           <>
@@ -37,6 +38,8 @@ const Home: FC = () => {
             <section ref={refs.Community}>
               <Community />
             </section>
+
+            <Footer />
           </>
         )}
       </AnchorNav>

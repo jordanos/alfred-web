@@ -1,26 +1,28 @@
 import { Box, Button, Typography } from '@mui/material';
-import { ReactComponent as Connect } from 'assets/svg/connect.svg';
+import { ReactComponent as Setup } from 'assets/svg/setup.svg';
+import { ReactComponent as Setting } from 'assets/svg/setting.svg';
+import { ReactComponent as Integration } from 'assets/svg/integration.svg';
 import { FC } from 'react';
 import ServicesCard, { ServiceCardInitProps } from './ServicesCard';
 
 const services: ServiceCardInitProps[] = [
   {
     id: '01',
-    title: 'Consulting',
-    text: "A Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's  standard dummy text ever since the 1500s,",
-    Icon: Connect,
+    title: 'Setup',
+    text: 'Register, login and create your AI chat-bot. Upload documents(txt, pdf) that the bot will refer to answer your customer questions and customize it to meet your needs.',
+    Icon: Setup,
   },
   {
     id: '02',
-    title: 'Research & Compliance',
-    text: "A Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's  standard dummy text ever since the 1500s, when an unknown title",
-    Icon: Connect,
+    title: 'Test & Fine-tune',
+    text: 'Use the chatting playground feature to optimize and test the bot.',
+    Icon: Setting,
   },
   {
     id: '03',
-    title: 'Technology',
-    text: "A Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's  standard dummy text ever since the 1500s, when an unknown title",
-    Icon: Connect,
+    title: 'Integration',
+    text: 'Get an API key and integrate the bot to your organization website or mobile app.',
+    Icon: Integration,
   },
 ];
 
@@ -34,7 +36,7 @@ const Services: FC = () => {
         fontSize={18}
         sx={{ my: 4 }}
       >
-        How Do We Work Our System And Our Journey
+        How Do We Work Our System
       </Typography>
       <Box>
         {services.map((service, index) => (

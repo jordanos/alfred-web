@@ -4,7 +4,7 @@ import wave from 'assets/images/wave.png';
 import { ReactComponent as Marketplace } from 'assets/svg/marketplace.svg';
 import { ReactComponent as ProtectedDir } from 'assets/svg/protected-directory.svg';
 import { ReactComponent as SecureNegative } from 'assets/svg/secure-negative.svg';
-import { ReactComponent as SecurePayment } from 'assets/svg/secure-payment.svg';
+import apiImg from 'assets/images/api.png';
 import { FC } from 'react';
 import AboutUsSmallCard from './AboutUsSmallCard';
 
@@ -38,13 +38,13 @@ const AboutUs: FC = () => {
         <Grid container>
           <Grid item sm={12} md={6}>
             <Typography variant="body2" color="text.disabled">
-              Build the Future with
+              Get instant answers
             </Typography>
             <Typography
               variant="h5"
               sx={{ mt: 1, fontWeight: 600, maxWidth: 300 }}
             >
-              Blockchain technology and currency
+              to your customer questions and resolve issues quickly.
             </Typography>
             <Button
               variant="contained"
@@ -56,7 +56,7 @@ const AboutUs: FC = () => {
                 fontSize: 12,
               }}
             >
-              Get Whitepaper
+              Start Creating
             </Button>
           </Grid>
           <Grid item sm={12} md={6} />
@@ -73,7 +73,7 @@ const AboutUs: FC = () => {
             Achievements
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: 600, fontSize: 18 }}>
-            Full Decentralised and Currency Security
+            24/7 availability everywhere
           </Typography>
           <Box
             sx={{
@@ -130,13 +130,16 @@ const AboutUs: FC = () => {
               About Us
             </Typography>
             <Typography variant="body2" sx={{ mt: 4 }}>
-              A Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 1500s, when an unknown printing and
-              typesetting industry. Lorem Ipsum has been the industry&apos;s
-              standard dummy text ever since the 1500s, when an unknown
+              Upload your organization help document and get instant answers to
+              your customer questions and resolve issues quickly with our
+              AI-powered customer support platform. Our advanced algorithms and
+              natural language processing capabilities allow us to understand
+              and respond to your inquiries faster and more accurately than ever
+              before. Whether you need help with a product or service, have a
+              question about your account, or want to provide feedback,
+              we&apos;re here to assist you 24/7.
             </Typography>
-            <Button
+            {/* <Button
               variant="outlined"
               size="large"
               sx={{
@@ -147,7 +150,7 @@ const AboutUs: FC = () => {
               }}
             >
               Learn More
-            </Button>
+            </Button> */}
           </Box>
         </Grid>
         <Grid item xs={12} sm={12} md={6} sx={{}}>
@@ -162,7 +165,7 @@ const AboutUs: FC = () => {
             <AboutUsSmallCard
               shadowColor="#FFB413"
               shadowDirection="left"
-              text="Marketplace"
+              text="Instant answers"
               Icon={Marketplace}
               alignment={{ top: 0, left: 0 }}
             />
@@ -176,8 +179,8 @@ const AboutUs: FC = () => {
             <AboutUsSmallCard
               shadowColor="#FD5A14"
               shadowDirection="right"
-              text="Money Protection"
-              Icon={SecurePayment}
+              text="API gateway"
+              image={apiImg}
               alignment={{ top: 70, left: 190 }}
             />
             <AboutUsSmallCard

@@ -15,22 +15,23 @@ const testimonials: { id: number; image: string; text: string }[] = [
   {
     id: 1,
     image: testimonialImg,
-    text: `import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import { Box, IconButton, Typography, useTheme } from '@mui/material';
-import MobileStepper from '@mui/material/MobileStepper';
-import testimonialImg from 'assets/images/testimonial.png';
-import wave from 'assets/images/wave.png';
-import { FC, useState } from 'react';
-import TestimonialCard from './TestimonialCard';`,
+    text: `"We've seen a significant increase in customer satisfaction
+     since implementing the AI chatbot from ACS. It's been a game-changer for our business, allowing us to provide 24/7 support without sacrificing personalized service."
+     - Sarah, Customer Service Manager at XYX Corporation`,
   },
   {
     id: 2,
     image: testimonialImg,
-    text: `import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import { Box, IconButton, Typography, useTheme } from '@mui/material';
-import MobileStepper from '@mui/mater`,
+    text: `"The AI chatbot has not only improved our response times but also helped us reduce costs by automating routine tasks.
+    The best part is that it's easy to use and integrates seamlessly with our existing systems."
+    - John, IT Director at ABC Inc.`,
+  },
+  {
+    id: 3,
+    image: testimonialImg,
+    text: `"Our customers love the chatbot!
+    It's like having a virtual concierge service that can answer their questions and help them with everything from ordering products to troubleshooting issues. We couldn't be happier with the results."
+    - Emily, Marketing Manager at DEF Enterprises`,
   },
 ];
 

@@ -139,18 +139,6 @@ const AboutUs: FC = () => {
               question about your account, or want to provide feedback,
               we&apos;re here to assist you 24/7.
             </Typography>
-            {/* <Button
-              variant="outlined"
-              size="large"
-              sx={{
-                textTransform: 'none',
-                mt: 8,
-                px: 8,
-                color: 'text.primary',
-              }}
-            >
-              Learn More
-            </Button> */}
           </Box>
         </Grid>
         <Grid item xs={12} sm={12} md={6} sx={{}}>

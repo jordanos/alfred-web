@@ -62,46 +62,6 @@ const Community: FC = () => {
         Our community with User reviews
       </Typography>
       <Box sx={{ position: 'relative', mx: 16 }}>
-        {/* backButton={
-            <IconButton
-              size="small"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-              sx={{
-                backgroundColor: 'primary.main',
-                position: 'absolute',
-                top: '50%',
-                left: 0,
-                ml: -2,
-              }}
-            >
-              {theme.direction === 'rtl' ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-            </IconButton>
-          }
-          nextButton={
-            <IconButton
-              size="small"
-              onClick={handleNext}
-              disabled={activeStep === 5}
-              sx={{
-                backgroundColor: 'primary.main',
-                position: 'absolute',
-                top: '50%',
-                right: 0,
-                mr: -2,
-              }}
-            >
-              {theme.direction === 'rtl' ? (
-                <KeyboardArrowLeft />
-              ) : (
-                <KeyboardArrowRight />
-              )}
-            </IconButton>
-          } */}
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           autoPlay={{

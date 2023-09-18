@@ -1,7 +1,7 @@
-import { Box, Button, Typography } from '@mui/material';
-import { ReactComponent as Setup } from 'assets/svg/setup.svg';
-import { ReactComponent as Setting } from 'assets/svg/setting.svg';
+import { Box, Typography } from '@mui/material';
 import { ReactComponent as Integration } from 'assets/svg/integration.svg';
+import { ReactComponent as Setting } from 'assets/svg/setting.svg';
+import { ReactComponent as Setup } from 'assets/svg/setup.svg';
 import { FC } from 'react';
 import ServicesCard, { ServiceCardInitProps } from './ServicesCard';
 
@@ -47,19 +47,6 @@ const Services: FC = () => {
           />
         ))}
       </Box>
-      <Button
-        variant="outlined"
-        size="large"
-        sx={{
-          textTransform: 'none',
-          mt: 4,
-          px: 6,
-          color: 'text.primary',
-          alignSelf: 'center',
-        }}
-      >
-        <Typography variant="body2">Let&apos;s See More</Typography>
-      </Button>
     </Box>
   );
 };

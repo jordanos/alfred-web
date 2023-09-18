@@ -5,6 +5,7 @@ import AboutUs from './AboutUs';
 import Community from './Community';
 import Footer from './Footer';
 import Nav from './Nav';
+import Pricing from './Pricing';
 import Services from './Services';
 
 export const elements: { [key: string]: { label: string } } = {
@@ -13,6 +14,9 @@ export const elements: { [key: string]: { label: string } } = {
   },
   Services: {
     label: 'Services',
+  },
+  Pricing: {
+    label: 'Pricing',
   },
   Community: {
     label: 'Community',
@@ -33,6 +37,10 @@ const Home: FC = () => {
 
             <section ref={refs.Services}>
               <Services />
+            </section>
+
+            <section ref={refs.Pricing}>
+              <Pricing />
             </section>
 
             <section ref={refs.Community}>

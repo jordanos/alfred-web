@@ -4,7 +4,7 @@ import { RouteObject } from 'react-router-dom';
 import { publicPages } from './menu';
 
 const pagesLazyImport: { [key: string]: LazyExoticComponent<FC> } = {
-  landing: lazy(() => import('pages/Landing')),
+  landing: lazy(() => import('features/misc/routes/Landing')),
 };
 
 export const publicRoutes: RouteObject[] = [

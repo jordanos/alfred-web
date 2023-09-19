@@ -28,7 +28,15 @@ const services: ServiceCardInitProps[] = [
 
 const Services: FC = () => {
   return (
-    <Box sx={{ mt: 8, display: 'flex', flexDirection: 'column' }}>
+    <Box
+      sx={{
+        mt: 8,
+        display: 'flex',
+        flexDirection: 'column',
+        maxWidth: '100%',
+        overflowX: 'hidden',
+      }}
+    >
       <Typography
         variant="h6"
         fontWeight={600}

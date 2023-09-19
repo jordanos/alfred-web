@@ -33,7 +33,7 @@ const Counter: FC<CounterProps> = ({ text, count }) => {
 
 const AboutUs: FC = () => {
   return (
-    <Box sx={{ mt: 10 }}>
+    <Box sx={{ mt: 10, maxWidth: '100%', overflowX: 'hidden' }}>
       <Box sx={{ px: 6 }}>
         <Grid container>
           <Grid item sm={12} md={6}>
@@ -125,11 +125,11 @@ const AboutUs: FC = () => {
       </Box>
       <Grid container>
         <Grid item xs={12} sm={12} md={6}>
-          <Box sx={{ px: 10, py: 6 }}>
+          <Box sx={{ px: { xs: 4, md: 10 }, py: 6 }}>
             <Typography variant="h6" fontWeight={600}>
               About Us
             </Typography>
-            <Typography variant="body2" sx={{ mt: 4 }}>
+            <Typography variant="body2" sx={{ mt: { xs: 1, md: 2 } }}>
               Upload your organization help document and get instant answers to
               your customer questions and resolve issues quickly with our
               AI-powered customer support platform. Our advanced algorithms and
@@ -141,7 +141,7 @@ const AboutUs: FC = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} sx={{}}>
+        <Grid item xs={12} sm={12} md={6} sx={{ mt: { xs: 8, md: 0 } }}>
           <Box
             sx={{
               position: 'relative',

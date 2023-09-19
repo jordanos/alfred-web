@@ -40,7 +40,7 @@ const Feature: FC<FeatureProps> = ({ isEnabled, text }) => {
 
 const Pricing = () => {
   return (
-    <Box sx={{ mt: 10 }}>
+    <Box sx={{ mt: 10, px: { xs: 0, md: 6 } }}>
       <Typography
         variant="h5"
         fontWeight={600}

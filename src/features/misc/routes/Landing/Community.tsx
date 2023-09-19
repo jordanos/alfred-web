@@ -37,7 +37,7 @@ const testimonials: { id: number; image: string; text: string }[] = [
 
 const Community: FC = () => {
   return (
-    <Box sx={{ mt: 10, position: 'relative', py: 6 }}>
+    <Box sx={{ mt: 10, position: 'relative', py: 6, maxWidth: '100%' }}>
       <img
         src={wave}
         alt="wave background"
@@ -51,17 +51,19 @@ const Community: FC = () => {
           maxHeight: '360px',
           borderTopRightRadius: '400px',
           borderBottomRightRadius: '400px',
+          maxWidth: '100%',
         }}
       />
-      <Typography
-        variant="h6"
-        textAlign="center"
-        fontWeight={600}
-        sx={{ mb: 4 }}
-      >
+      <Typography variant="h6" textAlign="center" fontWeight={600}>
         Our community with User reviews
       </Typography>
-      <Box sx={{ position: 'relative', mx: 16 }}>
+      <Box
+        sx={{
+          position: 'relative',
+          mx: { xs: 0, md: 16 },
+          mt: 4,
+        }}
+      >
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           autoPlay={{
@@ -72,6 +74,8 @@ const Community: FC = () => {
             clickable: true,
           }}
           navigation
+          spaceBetween={30}
+          style={{ maxWidth: '100%' }}
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>

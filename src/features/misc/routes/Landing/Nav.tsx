@@ -1,5 +1,6 @@
-import { Box, Button, Typography } from '@mui/material';
-import { FC } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Box, Button, Drawer, IconButton, Typography } from '@mui/material';
+import { FC, useState } from 'react';
 import { elements } from '.';
 
 interface Props {
@@ -7,7 +8,71 @@ interface Props {
   goTo: Function;
 }
 
+interface NavProps extends Props {
+  setMobileNav: Function;
+}
+
+const NavItems: FC<NavProps> = ({ activeElement, goTo, setMobileNav }) => {
+  return (
+    <>
+      <Box sx={{ display: { xs: 'block', md: 'flex' } }}>
+        {Object.keys(elements).map((key) => {
+          const isActive = activeElement === key;
+
+          return (
+            <Box
+              key={key}
+              onClick={() => {
+                goTo(key);
+                setMobileNav(false);
+              }}
+              sx={{
+                cursor: 'pointer',
+                color: isActive ? 'primary.main' : 'text.primary',
+                mr: 8,
+                '&:last-child': {
+                  mr: 0,
+                },
+                mt: { xs: 1.5, md: 0 },
+              }}
+            >
+              <Typography variant="body2">{elements[key].label}</Typography>
+              {isActive && (
+                <Box
+                  sx={{
+                    width: '70%',
+                    borderRadius: 5,
+                    height: 3,
+                    mt: 0.5,
+                    backgroundColor: 'primary.main',
+                  }}
+                />
+              )}
+            </Box>
+          );
+        })}
+      </Box>
+
+      <Button
+        variant="outlined"
+        size="large"
+        sx={{
+          color: 'text.primary',
+          textTransform: 'none',
+          fontWeight: 'bold',
+          ml: { xs: 0, md: 10 },
+          mt: { xs: 10, md: 0 },
+        }}
+      >
+        Join for free
+      </Button>
+    </>
+  );
+};
+
 const Nav: FC<Props> = ({ activeElement, goTo }) => {
+  const [mobileNav, setMobileNav] = useState(false);
+
   return (
     <Box
       sx={{
@@ -15,66 +80,62 @@ const Nav: FC<Props> = ({ activeElement, goTo }) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#09251E',
-        height: 100,
+        height: 75,
         borderRadius: 10,
-        px: 8,
+        px: { xs: 4, md: 8 },
         my: 2,
+        mt: 4,
+        position: 'sticky',
+        top: 15,
+        left: 0,
+        right: 0,
+        zIndex: 1,
       }}
     >
-      <Box>
-        <Typography variant="overline" fontSize={28}>
-          A C S
-        </Typography>
-      </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Box sx={{ display: 'flex' }}>
-          {Object.keys(elements).map((key) => {
-            const isActive = activeElement === key;
-
-            return (
-              <Box
-                key={key}
-                onClick={() => {
-                  goTo(key);
-                }}
-                sx={{
-                  cursor: 'pointer',
-                  color: isActive ? 'primary.main' : 'text.primary',
-                  mr: 8,
-                  '&:last-child': {
-                    mr: 0,
-                  },
-                }}
-              >
-                <Typography variant="body2">{elements[key].label}</Typography>
-                {isActive && (
-                  <Box
-                    sx={{
-                      width: '70%',
-                      borderRadius: 5,
-                      height: 3,
-                      mt: 0.5,
-                      backgroundColor: 'primary.main',
-                    }}
-                  />
-                )}
-              </Box>
-            );
-          })}
-        </Box>
-
-        <Button
-          variant="outlined"
-          size="large"
+      <Typography variant="overline" fontSize={28} fontWeight={400}>
+        A C S
+      </Typography>
+      <IconButton
+        sx={{ display: { xs: 'block', md: 'none' } }}
+        onClick={() => setMobileNav((prev) => !prev)}
+      >
+        <MenuIcon />
+      </IconButton>
+      <Drawer
+        anchor="left"
+        open={mobileNav}
+        onClose={() => setMobileNav((prev) => !prev)}
+        sx={{ display: { sm: 'block', md: 'none' } }}
+      >
+        <Box
           sx={{
-            color: 'text.primary',
-            textTransform: 'none',
-            fontWeight: 'bold',
-            ml: 10,
+            position: 'relative',
+            top: 0,
+            left: 0,
+            bottom: 0,
+            width: 250,
+            height: '100vh',
+            backgroundColor: '#09251E',
+            pl: 2,
+            pr: 4,
+            py: 6,
+            display: 'flex',
+            flexDirection: 'column',
           }}
         >
-          Join for free
-        </Button>
+          <NavItems
+            activeElement={activeElement}
+            goTo={goTo}
+            setMobileNav={setMobileNav}
+          />
+        </Box>
+      </Drawer>
+      <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
+        <NavItems
+          activeElement={activeElement}
+          goTo={goTo}
+          setMobileNav={setMobileNav}
+        />
       </Box>
     </Box>
   );

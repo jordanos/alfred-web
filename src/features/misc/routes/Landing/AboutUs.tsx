@@ -33,7 +33,7 @@ const Counter: FC<CounterProps> = ({ text, count }) => {
 
 const AboutUs: FC = () => {
   return (
-    <Box sx={{ mt: 10 }}>
+    <Box sx={{ mt: 10, maxWidth: '100%', overflowX: 'hidden' }}>
       <Box sx={{ px: 6 }}>
         <Grid container>
           <Grid item sm={12} md={6}>

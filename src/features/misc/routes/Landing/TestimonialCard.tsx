@@ -14,46 +14,66 @@ const TestimonialCard: FC<Props> = ({ image, text }) => {
     <Box
       sx={{
         p: 6,
-        borderRadius: '300px',
+        borderRadius: { xs: 10, md: '300px' },
         backgroundColor: '#00DD9C1A',
         position: 'relative',
+        maxWidth: '100%',
+        pb: { xs: 8, md: 6 },
       }}
     >
-      <QuoteSvg
-        style={{
+      <Box
+        sx={{
           position: 'absolute',
-          left: '35%',
-          top: 10,
-          width: '72px',
-          height: '72px',
-          opacity: '0.6',
+          left: { xs: '18%', md: '35%' },
+          top: { xs: 40, md: 10 },
+          width: { xs: '42px', md: '72px' },
+          height: { xs: '42px', md: '72px' },
         }}
-      />
+      >
+        <QuoteSvg
+          style={{
+            width: '100%',
+            height: '100%',
+            opacity: '0.6',
+          }}
+        />
+      </Box>
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: { xs: 'column', md: 'row' },
           alignItems: 'center',
           justifyContent: 'center',
-          px: 6,
+          px: { xs: 2, md: 6 },
         }}
       >
-        <img
-          src={image}
-          alt="testimony"
-          style={{
-            width: '128px',
-            height: '128px',
-            borderRadius: '100px',
-            borderColor: theme.palette.primary.main,
-            borderWidth: '3px',
-            borderStyle: 'solid',
+        <Box
+          sx={{
+            width: { xs: '64px', md: '128px' },
+            height: { xs: '64px', md: '128px' },
           }}
-        />
+        >
+          <img
+            src={image}
+            alt="testimony"
+            style={{
+              width: '100%',
+              height: '100%',
+              borderRadius: '100px',
+              borderColor: theme.palette.primary.main,
+              borderWidth: '3px',
+              borderStyle: 'solid',
+            }}
+          />
+        </Box>
         <Typography
           variant="body1"
           color="text.disabled"
-          sx={{ maxWidth: '420px', ml: 6 }}
+          sx={{
+            maxWidth: { xs: '100%', md: '420px' },
+            ml: { xs: 0, md: 6 },
+            mt: { xs: 4, md: 0 },
+          }}
         >
           {text}
         </Typography>

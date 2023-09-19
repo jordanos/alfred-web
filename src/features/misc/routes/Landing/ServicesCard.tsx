@@ -19,8 +19,8 @@ const ServicesCard: FC<Props> = ({ id, title, text, Icon, alignment }) => {
       <Box
         sx={{
           position: 'relative',
-          borderRadius: 50,
-          width: '80%',
+          borderRadius: { xs: 10, md: 50 },
+          width: { xs: '100%', md: '80%' },
           alignSelf: alignment === 'left' ? 'flex-start' : 'flex-end',
           backgroundImage: `url(${treeImg})`,
           backgroundRepeat: 'repeat',
@@ -30,7 +30,7 @@ const ServicesCard: FC<Props> = ({ id, title, text, Icon, alignment }) => {
         <Box
           sx={{
             position: 'absolute',
-            borderRadius: 50,
+            borderRadius: { xs: 10, md: 50 },
             top: 0,
             bottom: 0,
             left: 0,
@@ -45,7 +45,7 @@ const ServicesCard: FC<Props> = ({ id, title, text, Icon, alignment }) => {
             px: 6,
             py: 3,
             flexDirection: {
-              xs: 'row',
+              xs: alignment === 'left' ? 'row-reverse' : 'row',
               md: alignment === 'left' ? 'row-reverse' : 'row',
             },
           }}
@@ -64,6 +64,7 @@ const ServicesCard: FC<Props> = ({ id, title, text, Icon, alignment }) => {
             <Typography
               variant="h2"
               sx={{
+                fontSize: { xs: 28, md: 72 },
                 fontWeight: 600,
                 color: 'transparent',
                 WebkitTextStroke: '1px #1F4439',
@@ -73,8 +74,8 @@ const ServicesCard: FC<Props> = ({ id, title, text, Icon, alignment }) => {
             </Typography>
             <Box
               sx={{
-                minWidth: 400,
-                maxWidth: 400,
+                minWidth: { xs: 250, md: 400 },
+                maxWidth: { xs: 250, md: 400 },
                 ml: { xs: 0, md: alignment === 'left' ? 0 : 2 },
                 mr: { xs: 0, md: alignment === 'left' ? 2 : 0 },
               }}
@@ -108,7 +109,13 @@ const ServicesCard: FC<Props> = ({ id, title, text, Icon, alignment }) => {
             </Box>
           </Box>
           <Box
-            sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              ml: { xs: alignment === 'left' ? 0 : 2, md: 0 },
+              mr: { xs: alignment === 'right' ? 0 : 2, md: 0 },
+            }}
           >
             <Icon
               style={{ width: '48px', height: '48px', alignSelf: 'center' }}

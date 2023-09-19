@@ -25,7 +25,7 @@ export const elements: { [key: string]: { label: string } } = {
 
 const Home: FC = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" sx={{ position: 'relative', mt: 1 }}>
       <AnchorNav elements={elements}>
         {({ refs, activeElement, goTo }) => (
           <>

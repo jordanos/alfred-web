@@ -87,6 +87,18 @@ const AboutUs: FC = () => {
             <Counter text="happy users" count={100} />
             <Counter text="happy users" count={120} />
           </Box>
+        </Box>
+      </Box>
+      <Box sx={{ backgroundColor: '#0D0D0D' }}>
+        <Box
+          sx={{
+            px: 6,
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
           <img
             src={map}
             alt="Map"
@@ -97,7 +109,7 @@ const AboutUs: FC = () => {
       <Box sx={{ mt: 8, position: 'relative' }}>
         <Box
           sx={{
-            backgroundColor: '#09251E',
+            backgroundColor: 'secondary.main',
             position: 'absolute',
             top: 0,
             bottom: 0,

@@ -30,7 +30,7 @@ const Services: FC = () => {
   return (
     <Box
       sx={{
-        mt: 8,
+        mt: { xs: 4, md: 8 },
         display: 'flex',
         flexDirection: 'column',
         maxWidth: '100%',

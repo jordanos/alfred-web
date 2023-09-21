@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import React, { FC, FunctionComponent } from 'react';
 import treeImg from 'assets/images/tree.png';
 
@@ -14,6 +14,8 @@ interface Props extends ServiceCardInitProps {
 }
 
 const ServicesCard: FC<Props> = ({ id, title, text, Icon, alignment }) => {
+  const theme = useTheme();
+
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', my: 2.5 }}>
       <Box
@@ -22,7 +24,8 @@ const ServicesCard: FC<Props> = ({ id, title, text, Icon, alignment }) => {
           borderRadius: { xs: 10, md: 50 },
           width: { xs: '100%', md: '80%' },
           alignSelf: alignment === 'left' ? 'flex-start' : 'flex-end',
-          backgroundImage: `url(${treeImg})`,
+          backgroundImage:
+            theme.palette.mode === 'dark' ? `url(${treeImg})` : '',
           backgroundRepeat: 'repeat',
           backgroundSize: '500px 400px',
         }}
@@ -35,7 +38,8 @@ const ServicesCard: FC<Props> = ({ id, title, text, Icon, alignment }) => {
             bottom: 0,
             left: 0,
             right: 0,
-            backgroundColor: '#00DD9C0A',
+            backgroundColor: 'secondary.light',
+            boxShadow: '0px 0px 3px -1px rgba(0,0,0,0.75)',
           }}
         />
         <Box

@@ -1,4 +1,11 @@
-import { Box, Button, Grid, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Grid,
+  Typography,
+} from '@mui/material';
 import React, { FC } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -40,7 +47,7 @@ const Feature: FC<FeatureProps> = ({ isEnabled, text }) => {
 
 const Pricing = () => {
   return (
-    <Box sx={{ mt: 10, px: { xs: 0, md: 6 } }}>
+    <Box sx={{ mt: { xs: 8, md: 10 }, px: { xs: 0, md: 6 } }}>
       <Typography
         variant="h5"
         fontWeight={600}
@@ -48,53 +55,59 @@ const Pricing = () => {
       >
         Pricing
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         {Object.keys(plans).map((key) => (
           <Grid item xs={12} md={4} sx={{ px: 1 }}>
-            <Box
+            <Card
               key={key}
+              elevation={2}
               sx={{
                 borderRadius: 5,
-                backgroundColor: '#00DD9C0A',
-                px: 4,
-                py: 3,
               }}
             >
-              <Typography
-                variant="h6"
-                fontWeight={600}
-                color="primary"
+              <CardContent
                 sx={{
-                  textTransform: 'capitalize',
-                  textAlign: 'center',
+                  px: 4,
+                  py: 3,
+                  backgroundColor: 'secondary.dark',
                 }}
               >
-                {key}
-              </Typography>
-              <Box sx={{ mt: 4 }}>
-                {plans[key].map((feature) => (
-                  <Feature
-                    key={feature.text}
-                    isEnabled={feature.isEnabled}
-                    text={feature.text}
-                  />
-                ))}
-              </Box>
-              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-                <Button
-                  variant="outlined"
+                <Typography
+                  variant="h6"
+                  fontWeight={600}
+                  color="primary"
                   sx={{
-                    px: 4,
-                    py: 0.5,
-                    textTransform: 'none',
-                    borderRadius: 10,
-                    alignSelf: 'center',
+                    textTransform: 'capitalize',
+                    textAlign: 'center',
                   }}
                 >
-                  <Typography variant="body2">Subscribe</Typography>
-                </Button>
-              </Box>
-            </Box>
+                  {key}
+                </Typography>
+                <Box sx={{ mt: 4 }}>
+                  {plans[key].map((feature) => (
+                    <Feature
+                      key={feature.text}
+                      isEnabled={feature.isEnabled}
+                      text={feature.text}
+                    />
+                  ))}
+                </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      px: 4,
+                      py: 0.5,
+                      textTransform: 'none',
+                      borderRadius: 10,
+                      alignSelf: 'center',
+                    }}
+                  >
+                    <Typography variant="body2">Subscribe</Typography>
+                  </Button>
+                </Box>
+              </CardContent>
+            </Card>
           </Grid>
         ))}
       </Grid>

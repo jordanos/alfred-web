@@ -37,23 +37,32 @@ const testimonials: { id: number; image: string; text: string }[] = [
 
 const Community: FC = () => {
   return (
-    <Box sx={{ mt: 10, position: 'relative', py: 6, maxWidth: '100%' }}>
-      <img
-        src={wave}
-        alt="wave background"
-        style={{
-          position: 'absolute',
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: '10%',
-          objectFit: 'cover',
-          maxHeight: '360px',
-          borderTopRightRadius: '400px',
-          borderBottomRightRadius: '400px',
-          maxWidth: '100%',
-        }}
-      />
+    <Box
+      sx={{
+        mt: { xs: 10, md: 16 },
+        position: 'relative',
+        py: 1,
+        maxWidth: '100%',
+      }}
+    >
+      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+        <img
+          src={wave}
+          alt="wave background"
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: '10%',
+            objectFit: 'cover',
+            maxHeight: '360px',
+            borderTopRightRadius: '400px',
+            borderBottomRightRadius: '400px',
+            maxWidth: '100%',
+          }}
+        />
+      </Box>
       <Typography variant="h6" textAlign="center" fontWeight={600}>
         Our community with User reviews
       </Typography>

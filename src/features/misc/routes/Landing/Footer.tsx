@@ -1,17 +1,20 @@
-import { Box, Divider, Grid, Typography } from '@mui/material';
+import { Box, Divider, Grid, Typography, useTheme } from '@mui/material';
 import { FC } from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer: FC = () => {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
-        mt: 8,
+        mt: { xs: 10, md: 18 },
         px: { xs: 4, md: 8 },
         pt: 6,
         pb: 4,
-        backgroundColor: '#00DD9C04',
+        backgroundColor:
+          theme.palette.mode === 'dark' ? '#00DD9C04' : 'secondary.main',
       }}
     >
       <Grid container spacing={2}>

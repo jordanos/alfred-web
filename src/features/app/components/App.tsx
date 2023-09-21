@@ -2,14 +2,20 @@ import { Box, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Wrapper from 'components/layout/Wrapper/Wrapper';
 import { Toaster } from 'components/toast';
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { noAsidePages } from 'routes/menu';
-import { themeOptions } from './theme';
-
-export const theme = createTheme(themeOptions);
+import { themeOptions as darkTheme } from '../constants/darkTheme';
+import { themeOptions as lightTheme } from '../constants/lightTheme';
 
 const App: FC = () => {
+  const themeMode = useSelector((state) => state.app.themeMode);
+  const theme = useMemo(
+    () => createTheme(themeMode === 'dark' ? darkTheme : lightTheme),
+    [themeMode]
+  );
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -19,7 +25,6 @@ const App: FC = () => {
           {noAsidePages.map((path) => (
             <Route key={path} path={path} />
           ))}
-          {/* <Route path="*" element={<Aside />} /> */}
         </Routes>
         <Wrapper />
       </Box>

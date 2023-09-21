@@ -15,7 +15,7 @@ const TestimonialCard: FC<Props> = ({ image, text }) => {
       sx={{
         p: 6,
         borderRadius: { xs: 10, md: '300px' },
-        backgroundColor: '#00DD9C1A',
+        backgroundColor: 'secondary.light',
         position: 'relative',
         maxWidth: '100%',
         pb: { xs: 8, md: 6 },

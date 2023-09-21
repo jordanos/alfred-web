@@ -1,6 +1,10 @@
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Button, Drawer, IconButton, Typography } from '@mui/material';
+import { toggleTheme } from 'features/app/appSlice';
 import { FC, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { elements } from '.';
 
 interface Props {
@@ -13,6 +17,9 @@ interface NavProps extends Props {
 }
 
 const NavItems: FC<NavProps> = ({ activeElement, goTo, setMobileNav }) => {
+  const dispatch = useDispatch();
+  const themeMode = useSelector((state) => state.app.themeMode);
+
   return (
     <>
       <Box sx={{ display: { xs: 'block', md: 'flex' } }}>
@@ -53,6 +60,14 @@ const NavItems: FC<NavProps> = ({ activeElement, goTo, setMobileNav }) => {
         })}
       </Box>
 
+      <IconButton
+        size="small"
+        onClick={() => dispatch(toggleTheme({ payload: '' }))}
+        sx={{ ml: { xs: 0, md: 6 }, mt: { xs: 2, md: 0 }, maxWidth: 36 }}
+      >
+        {themeMode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+      </IconButton>
+
       <Button
         variant="outlined"
         size="large"
@@ -60,8 +75,8 @@ const NavItems: FC<NavProps> = ({ activeElement, goTo, setMobileNav }) => {
           color: 'text.primary',
           textTransform: 'none',
           fontWeight: 'bold',
-          ml: { xs: 0, md: 10 },
-          mt: { xs: 10, md: 0 },
+          ml: { xs: 0, md: 4 },
+          mt: { xs: 6, md: 0 },
         }}
       >
         Join for free
@@ -79,17 +94,18 @@ const Nav: FC<Props> = ({ activeElement, goTo }) => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#09251E',
+        backgroundColor: 'secondary.dark',
         height: 75,
         borderRadius: 10,
         px: { xs: 4, md: 8 },
         my: 2,
-        mt: 4,
+        mt: 2.25,
         position: 'sticky',
         top: 15,
         left: 0,
         right: 0,
         zIndex: 1,
+        boxShadow: '0px 0px 3px -1px rgba(0,0,0,0.75)',
       }}
     >
       <Typography variant="overline" fontSize={28} fontWeight={400}>
@@ -115,7 +131,7 @@ const Nav: FC<Props> = ({ activeElement, goTo }) => {
             bottom: 0,
             width: 250,
             height: '100vh',
-            backgroundColor: '#09251E',
+            backgroundColor: 'secondary.dark',
             pl: 2,
             pr: 4,
             py: 6,

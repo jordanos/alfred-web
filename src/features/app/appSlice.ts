@@ -28,6 +28,5 @@ const appSlice: Slice<AppType> = createSlice({
   },
 });
 
-export const { toggleMobileNav, toggleTheme, setPageLoading } =
-  appSlice.actions;
+export const { toggleMobileNav, toggleTheme, setPageLoading } = appSlice.actions;
 export default appSlice.reducer;

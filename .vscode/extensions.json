@@ -4,6 +4,7 @@
     "esbenp.prettier-vscode",
     "csstools.postcss",
     "orta.vscode-jest",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "wix.vscode-import-cost"
   ]
 }

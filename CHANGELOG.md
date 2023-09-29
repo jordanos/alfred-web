@@ -37,6 +37,7 @@ Types of changes
 - Router setup
 - Toasting messages
 - Landing page
+- Custom global components[Modal, Table]
 
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD -->
 

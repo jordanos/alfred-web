@@ -57,7 +57,7 @@ const Pricing = () => {
       </Typography>
       <Grid container spacing={3}>
         {Object.keys(plans).map((key) => (
-          <Grid item xs={12} md={4} sx={{ px: 1 }}>
+          <Grid key={key} item xs={12} md={4} sx={{ px: 1 }}>
             <Card
               key={key}
               elevation={2}

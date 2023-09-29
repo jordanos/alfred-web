@@ -1,5 +1,7 @@
 import { Box, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import ModalProvider from 'components/CustomModal/ModalProvider';
 import Wrapper from 'components/layout/Wrapper/Wrapper';
 import { Toaster } from 'components/Toast';
@@ -19,20 +21,20 @@ const App: FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-
-      <ModalProvider>
-        <Box sx={{ display: 'flex', height: '100vh', width: '100%' }}>
-          <Routes>
-            {noAsidePages.map((path) => (
-              <Route key={path} path={path} />
-            ))}
-          </Routes>
-          <Wrapper />
-        </Box>
-      </ModalProvider>
-
-      <Toaster position="bottom-left" />
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <CssBaseline />
+        <ModalProvider>
+          <Box sx={{ display: 'flex', height: '100vh', width: '100%' }}>
+            <Routes>
+              {noAsidePages.map((path) => (
+                <Route key={path} path={path} />
+              ))}
+            </Routes>
+            <Wrapper />
+          </Box>
+        </ModalProvider>
+        <Toaster position="bottom-left" />
+      </LocalizationProvider>
     </ThemeProvider>
   );
 };

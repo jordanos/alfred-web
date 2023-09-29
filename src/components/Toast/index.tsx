@@ -6,7 +6,7 @@ export const Toaster = HotToaster;
 
 interface Props {
   message: string;
-  severity: 'success' | 'info' | 'warning' | 'error';
+  severity?: 'success' | 'info' | 'warning' | 'error';
 }
 
 interface ToastProps extends Props {
@@ -28,8 +28,10 @@ const Toast: FC<ToastProps> = (props) => {
   );
 };
 
+Toast.defaultProps = { severity: 'success' };
+
 export const toast = (opts: Props) => {
-  const { message, severity = 'success' } = opts;
+  const { message, severity } = opts;
 
   return hotToast.custom(({ visible, id }) => (
     <Toast

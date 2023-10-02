@@ -2,7 +2,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Button, Drawer, IconButton, Typography } from '@mui/material';
-import { toggleTheme } from 'features/app/appSlice';
+import { toggleTheme } from 'features/auth/userSlice';
 import { FC, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { elements } from '.';
@@ -18,7 +18,9 @@ interface NavProps extends Props {
 
 const NavItems: FC<NavProps> = ({ activeElement, goTo, setMobileNav }) => {
   const dispatch = useDispatch();
-  const themeMode = useSelector((state) => state.app.themeMode);
+  const themeMode = useSelector((state) => {
+    return state.user.theme;
+  });
 
   return (
     <>

@@ -38,6 +38,7 @@ Types of changes
 - Toasting messages
 - Landing page
 - Custom global components[Modal, Table, Forms]
+- Persisted state to local
 
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD -->
 

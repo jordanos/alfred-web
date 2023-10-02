@@ -25,6 +25,7 @@
     "@mui/material": "^5.13.7",
     "@mui/system": "^5.14.4",
     "@mui/x-date-pickers": "^6.15.0",
+    "@react-oauth/google": "^0.11.1",
     "@reduxjs/toolkit": "^1.9.5",
     "dayjs": "^1.11.10",
     "lint-staged": "^14.0.1",

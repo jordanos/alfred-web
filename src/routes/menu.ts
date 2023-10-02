@@ -13,8 +13,18 @@ export const commonPages: PagesType = {};
 export const publicPages: PagesType = {
   landing: {
     id: 'landing',
-    text: 'landing',
+    text: 'Landing',
     path: '/',
+  },
+  register: {
+    id: 'register',
+    text: 'Register',
+    path: '/auth/register',
+  },
+  login: {
+    id: 'login',
+    text: 'Login',
+    path: '/auth/login',
   },
 };
 

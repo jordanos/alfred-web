@@ -13,7 +13,7 @@ import { themeOptions as darkTheme } from '../constants/darkTheme';
 import { themeOptions as lightTheme } from '../constants/lightTheme';
 
 const App: FC = () => {
-  const themeMode = useSelector((state) => state.app.themeMode);
+  const themeMode = useSelector((state) => state.user.theme);
   const theme = useMemo(
     () => createTheme(themeMode === 'dark' ? darkTheme : lightTheme),
     [themeMode]

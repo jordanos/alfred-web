@@ -1,7 +1,7 @@
 import { BaseQueryApi, FetchArgs } from '@reduxjs/toolkit/dist/query';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_URL } from 'constants/api';
-import { logout } from 'features/auth/authSlice';
+import { logout } from 'features/auth/userSlice';
 
 const noAuthEndpoints = ['login'];
 

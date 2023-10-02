@@ -1,16 +1,17 @@
 import { createSlice, Slice } from '@reduxjs/toolkit';
-import { LocalUser } from './types';
+import { User } from './types';
 
-const localUser: LocalUser = {
+const initUser: User = {
   firstName: null,
   role: null,
   isAuth: false,
   token: null,
+  theme: 'dark',
 };
 
-const authSlice: Slice<LocalUser> = createSlice({
-  name: 'auth',
-  initialState: localUser,
+const userSlice: Slice<User> = createSlice({
+  name: 'user',
+  initialState: initUser,
   reducers: {
     setCredentials: (state, { payload }) => {
       state.firstName = payload.firstName;
@@ -18,16 +19,17 @@ const authSlice: Slice<LocalUser> = createSlice({
       state.isAuth = payload.isAuth;
       state.token = payload.token;
     },
-
+    toggleTheme: (state) => {
+      state.theme = state.theme === 'dark' ? 'light' : 'dark';
+    },
     logout: (state) => {
       state.firstName = null;
       state.role = null;
       state.isAuth = false;
       state.token = null;
-      localStorage.removeItem('user');
     },
   },
 });
 
-export const { setCredentials, logout } = authSlice.actions;
-export default authSlice.reducer;
+export const { setCredentials, toggleTheme, logout } = userSlice.actions;
+export default userSlice.reducer;

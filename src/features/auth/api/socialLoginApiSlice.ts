@@ -13,7 +13,18 @@ export const socialLoginApiSlice = apiSlice.injectEndpoints({
       },
       invalidatesTags: [],
     }),
+    loginGithub: builder.mutation({
+      query: (body) => ({
+        url: '/auth/social/github/',
+        method: 'POST',
+        body,
+      }),
+      transformResponse(res: { key: string }) {
+        return res;
+      },
+      invalidatesTags: [],
+    }),
   }),
 });
 
-export const { useLoginGoogleMutation } = socialLoginApiSlice;
+export const { useLoginGoogleMutation, useLoginGithubMutation } = socialLoginApiSlice;

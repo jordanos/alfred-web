@@ -1,3 +1,5 @@
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
   Box,
   Button,
@@ -6,6 +8,8 @@ import {
   FormControlLabel,
   FormGroup,
   FormHelperText,
+  IconButton,
+  InputAdornment,
   InputLabel,
   MenuItem,
   Select,
@@ -17,7 +21,7 @@ import {
   MobileDatePicker,
   TimePicker,
 } from '@mui/x-date-pickers';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Control, Controller, FieldValues } from 'react-hook-form';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -64,6 +68,62 @@ export const CustomTextField: FC<FieldProps> = ({
 };
 
 CustomTextField.defaultProps = {
+  ...defaultProps,
+};
+
+export const CustomPasswordField: FC<FieldProps> = ({
+  name,
+  control,
+  label,
+  ...rest
+}) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+
+  return (
+    <Controller
+      name={name}
+      control={control}
+      render={({ field, fieldState: { error } }) => (
+        <TextField
+          fullWidth
+          variant="standard"
+          sx={{ my: 1 }}
+          label={label}
+          {...field}
+          error={!!error}
+          helperText={error ? error.message : null}
+          {...rest}
+          type={showPassword ? 'text' : 'password'}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment
+                position="end"
+                style={{ border: '0pc solid transparent' }}
+              >
+                <IconButton
+                  size="small"
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? (
+                    <Visibility sx={{ width: 22, height: 22 }} />
+                  ) : (
+                    <VisibilityOff sx={{ width: 22, height: 22 }} />
+                  )}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+    />
+  );
+};
+
+CustomPasswordField.defaultProps = {
   ...defaultProps,
 };
 

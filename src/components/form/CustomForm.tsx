@@ -1,13 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FC, useMemo } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import {
+  SubmitHandler,
+  useForm,
+  UseFormReset,
+  UseFormSetError,
+} from 'react-hook-form';
 import { getInitialValues } from 'utils/form';
 import { z, ZodTypeAny } from 'zod';
 import {
   BaseFieldProps,
   CustomDateField,
   CustomDateTimeField,
+  CustomPasswordField,
   CustomSelectField,
   CustomSwitchField,
   CustomTextAreaField,
@@ -21,6 +27,7 @@ export interface FormField extends BaseFieldProps {
   initValue: unknown;
   fieldType:
   | 'Text'
+  | 'Password'
   | 'Paragraph'
   | 'Boolean'
   | 'Choice'
@@ -29,13 +36,28 @@ export interface FormField extends BaseFieldProps {
   | 'DateTime';
 }
 
-interface Props {
-  fields: FormField[];
-  onSubmit: SubmitHandler<{ [key: string]: any }>;
-  isLoading: boolean;
+export interface OnSubmitProps {
+  values: any;
+  reset: UseFormReset<{ [key: string]: any }>;
+  setError: UseFormSetError<{ [key: string]: any }>;
 }
 
-const CustomForm: FC<Props> = ({ fields, onSubmit, isLoading }) => {
+interface Props {
+  fields: FormField[];
+  onSubmit: SubmitHandler<OnSubmitProps>;
+  isLoading: boolean;
+  schemaRefinements?: {
+    cb: (arg: { [x: string]: any }) => unknown;
+    info: any;
+  }[];
+}
+
+const CustomForm: FC<Props> = ({
+  fields,
+  onSubmit,
+  isLoading,
+  schemaRefinements,
+}) => {
   const validationSchema = useMemo(() => {
     // Get validation schema dynamically from fields
     const v = fields.reduce<{ [key: string]: ZodTypeAny }>((acc, cur) => {
@@ -45,8 +67,13 @@ const CustomForm: FC<Props> = ({ fields, onSubmit, isLoading }) => {
       return acc;
     }, {});
 
+    if (schemaRefinements !== undefined && schemaRefinements.length > 0) {
+      return z
+        .object(v)
+        .refine(schemaRefinements[0].cb, schemaRefinements[0].info);
+    }
     return z.object(v);
-  }, [fields]);
+  }, [fields, schemaRefinements]);
 
   const { control, handleSubmit, reset, setError } = useForm({
     defaultValues: getInitialValues(fields),
@@ -70,6 +97,8 @@ const CustomForm: FC<Props> = ({ fields, onSubmit, isLoading }) => {
         switch (fieldType) {
           case 'Text':
             return <CustomTextField {...commonProps} />;
+          case 'Password':
+            return <CustomPasswordField {...commonProps} />;
           case 'Paragraph':
             return <CustomTextAreaField {...commonProps} />;
           case 'Boolean':
@@ -89,6 +118,10 @@ const CustomForm: FC<Props> = ({ fields, onSubmit, isLoading }) => {
       <SubmitButton text="Submit" isSubmitting={isLoading} />
     </form>
   );
+};
+
+CustomForm.defaultProps = {
+  schemaRefinements: [],
 };
 
 export default CustomForm;

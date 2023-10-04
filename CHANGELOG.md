@@ -39,6 +39,7 @@ Types of changes
 - Landing page
 - Custom global components[Modal, Table, Forms]
 - Persisted state to local
+- Authentication
 
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD -->
 

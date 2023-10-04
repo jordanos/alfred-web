@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_URL } from 'constants/api';
 import { logout } from 'features/auth/userSlice';
 
-const noAuthEndpoints = ['login'];
+const noAuthEndpoints = ['loginGoogle', 'loginGithub'];
 
 const baseQuery = fetchBaseQuery({
   baseUrl: API_URL,

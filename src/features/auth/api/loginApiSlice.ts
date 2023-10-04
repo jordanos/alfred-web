@@ -2,6 +2,17 @@ import { apiSlice } from 'store/api/apiSlice';
 
 export const socialLoginApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
+    loginEmail: builder.mutation({
+      query: (body) => ({
+        url: '/auth/login/',
+        method: 'POST',
+        body,
+      }),
+      transformResponse(res: { token: string }) {
+        return res;
+      },
+      invalidatesTags: [],
+    }),
     loginGoogle: builder.mutation({
       query: (body) => ({
         url: '/auth/social/google/',
@@ -27,4 +38,8 @@ export const socialLoginApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useLoginGoogleMutation, useLoginGithubMutation } = socialLoginApiSlice;
+export const {
+  useLoginEmailMutation,
+  useLoginGoogleMutation,
+  useLoginGithubMutation,
+} = socialLoginApiSlice;

@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FC, useMemo } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import {
+  SubmitHandler,
+  useForm,
+  UseFormReset,
+  UseFormSetError,
+} from 'react-hook-form';
 import { getInitialValues } from 'utils/form';
 import { z, ZodTypeAny } from 'zod';
 import {
@@ -29,9 +34,15 @@ export interface FormField extends BaseFieldProps {
   | 'DateTime';
 }
 
+export interface OnSubmitProps {
+  values: any;
+  reset: UseFormReset<{ [key: string]: any }>;
+  setError: UseFormSetError<{ [key: string]: any }>;
+}
+
 interface Props {
   fields: FormField[];
-  onSubmit: SubmitHandler<{ [key: string]: any }>;
+  onSubmit: SubmitHandler<OnSubmitProps>;
   isLoading: boolean;
 }
 

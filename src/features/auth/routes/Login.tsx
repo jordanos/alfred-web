@@ -22,17 +22,18 @@ import {
 import {
   useLoginGithubMutation,
   useLoginGoogleMutation,
-} from '../api/socialLoginApiSlice';
+} from '../api/loginApiSlice';
 import AuthWrapper from '../components/AuthWrapper';
 import { setAuth } from '../userSlice';
+import EmailLoginForm from '../components/EmailLoginForm';
 
 const Login: FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [loginGoogle] = useLoginGoogleMutation<{ data: { key: string } }>();
-  const [loginGithub] = useLoginGithubMutation<{ data: { key: string } }>();
+  const [loginGoogle] = useLoginGoogleMutation();
+  const [loginGithub] = useLoginGithubMutation();
 
   const handleLoginError = () => {
     setIsLoading(false);
@@ -57,6 +58,10 @@ const Login: FC = () => {
   return (
     <AuthWrapper>
       {isLoading && <LoadingFullscreen />}
+      <EmailLoginForm
+        handleLogin={handleLogin}
+        handleLoginError={handleLoginError}
+      />
       <LoginSocialGoogle
         isOnlyGetToken
         client_id={GOOGLE_CLIENT_ID}

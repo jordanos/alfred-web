@@ -10,7 +10,7 @@ const AuthWrapper: FC<Props> = ({ children }) => {
     <Container maxWidth="xs">
       <Paper
         elevation={2}
-        sx={{ width: '100%', p: 2, mt: 24, position: 'relative' }}
+        sx={{ width: '100%', p: 2, mt: '23vh', position: 'relative' }}
       >
         {children}
       </Paper>

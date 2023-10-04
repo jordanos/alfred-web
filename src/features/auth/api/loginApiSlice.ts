@@ -1,6 +1,6 @@
 import { apiSlice } from 'store/api/apiSlice';
 
-export const socialLoginApiSlice = apiSlice.injectEndpoints({
+export const loginApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     loginEmail: builder.mutation({
       query: (body) => ({
@@ -42,4 +42,4 @@ export const {
   useLoginEmailMutation,
   useLoginGoogleMutation,
   useLoginGithubMutation,
-} = socialLoginApiSlice;
+} = loginApiSlice;

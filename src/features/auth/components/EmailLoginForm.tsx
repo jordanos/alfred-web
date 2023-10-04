@@ -4,6 +4,7 @@ import CustomForm, {
   OnSubmitProps,
 } from 'components/form/CustomForm';
 import { FC } from 'react';
+import { publicPages } from 'routes/menu';
 import { z } from 'zod';
 import { useLoginEmailMutation } from '../api/loginApiSlice';
 
@@ -42,26 +43,19 @@ const EmailLoginForm: FC<Props> = ({ handleLogin, handleLoginError }) => {
 
   const onSubmit: (arg0: OnSubmitProps) => void = async ({ values }) => {
     try {
-      const res = await login({
-        email: values.email,
-        password: values.password,
-      }).unwrap();
+      const res = await login(values).unwrap();
       handleLogin(res.token);
     } catch (e) {
       handleLoginError();
     }
-    console.log(values);
   };
 
   return (
     <Box sx={{ mb: 4, display: 'flex', flexDirection: 'column' }}>
-      <Typography variant="overline" textAlign="center">
-        A C S
-      </Typography>
       <CustomForm fields={fields} onSubmit={onSubmit} isLoading={isLoading} />
       <Typography variant="body2" sx={{ mt: 1 }}>
         Don&apos;t have an account?&nbsp;
-        <Link href="/auth/register">create new</Link>
+        <Link href={publicPages.register.path}>create new</Link>
       </Typography>
     </Box>
   );

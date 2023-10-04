@@ -1,4 +1,4 @@
-import { Container, Paper } from '@mui/material';
+import { Container, Paper, Typography } from '@mui/material';
 import { FC, ReactNode } from 'react';
 
 interface Props {
@@ -10,8 +10,18 @@ const AuthWrapper: FC<Props> = ({ children }) => {
     <Container maxWidth="xs">
       <Paper
         elevation={2}
-        sx={{ width: '100%', p: 2, mt: '23vh', position: 'relative' }}
+        sx={{
+          width: '100%',
+          p: 2,
+          mt: '23vh',
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
       >
+        <Typography variant="overline" textAlign="center">
+          A C S
+        </Typography>
         {children}
       </Paper>
     </Container>

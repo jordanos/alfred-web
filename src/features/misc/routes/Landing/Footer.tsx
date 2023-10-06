@@ -2,9 +2,11 @@ import { Box, Divider, Grid, Typography, useTheme } from '@mui/material';
 import { FC } from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { useTranslation } from 'react-i18next';
 
 const Footer: FC = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -27,9 +29,7 @@ const Footer: FC = () => {
             color="text.disabled"
             sx={{ mt: { xs: 1, md: 2 }, maxWidth: 400 }}
           >
-            Answer your customer questions instantly with 24/7 support, reliable
-            knowledge base, Easy to use API interface and pre-made chatting
-            components.
+            {t('footer-desc')}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
@@ -41,7 +41,7 @@ const Footer: FC = () => {
                 fontWeight={600}
                 sx={{ mb: { xs: 1, md: 2 } }}
               >
-                Social media
+                {t('social-media')}
               </Typography>
               <Box sx={{ display: 'flex', color: 'primary.main' }}>
                 <LinkedInIcon />

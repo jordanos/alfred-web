@@ -9,6 +9,7 @@ import {
 import React, { FC } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { useTranslation } from 'react-i18next';
 
 type FeatureType = { isEnabled: boolean; text: string };
 
@@ -46,6 +47,8 @@ const Feature: FC<FeatureProps> = ({ isEnabled, text }) => {
 };
 
 const Pricing = () => {
+  const { t } = useTranslation();
+
   return (
     <Box sx={{ mt: { xs: 8, md: 10 }, px: { xs: 0, md: 6 } }}>
       <Typography
@@ -53,7 +56,7 @@ const Pricing = () => {
         fontWeight={600}
         sx={{ mb: 4, textAlign: 'center' }}
       >
-        Pricing
+        {t('pricing')}
       </Typography>
       <Grid container spacing={3}>
         {Object.keys(plans).map((key) => (

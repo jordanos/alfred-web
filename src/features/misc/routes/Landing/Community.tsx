@@ -4,6 +4,7 @@ import wave from 'assets/images/wave.png';
 import { FC } from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useTranslation } from 'react-i18next';
 import TestimonialCard from './TestimonialCard';
 
 // Import Swiper styles
@@ -36,6 +37,8 @@ const testimonials: { id: number; image: string; text: string }[] = [
 ];
 
 const Community: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -64,7 +67,7 @@ const Community: FC = () => {
         />
       </Box>
       <Typography variant="h6" textAlign="center" fontWeight={600}>
-        Our community with User reviews
+        {t('our-community-with-user-reviews')}
       </Typography>
       <Box
         sx={{

@@ -1,11 +1,12 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
+import apiImg from 'assets/images/api.png';
 import map from 'assets/images/map.png';
 import wave from 'assets/images/wave.png';
 import { ReactComponent as Marketplace } from 'assets/svg/marketplace.svg';
 import { ReactComponent as ProtectedDir } from 'assets/svg/protected-directory.svg';
 import { ReactComponent as SecureNegative } from 'assets/svg/secure-negative.svg';
-import apiImg from 'assets/images/api.png';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import AboutUsSmallCard from './AboutUsSmallCard';
 
 interface CounterProps {
@@ -32,19 +33,21 @@ const Counter: FC<CounterProps> = ({ text, count }) => {
 };
 
 const AboutUs: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Box sx={{ mt: 10, maxWidth: '100%', overflowX: 'hidden' }}>
       <Box sx={{ px: 6 }}>
         <Grid container>
           <Grid item sm={12} md={6}>
             <Typography variant="body2" color="text.disabled">
-              Get instant answers
+              {t('slogan-1')}
             </Typography>
             <Typography
               variant="h5"
               sx={{ mt: 1, fontWeight: 600, maxWidth: 300 }}
             >
-              to your customer questions and resolve issues quickly.
+              {t('slogan-2')}
             </Typography>
             <Button
               variant="contained"
@@ -56,7 +59,7 @@ const AboutUs: FC = () => {
                 fontSize: 12,
               }}
             >
-              Start Creating
+              {t('start-creating')}
             </Button>
           </Grid>
           <Grid item sm={12} md={6} />
@@ -70,10 +73,10 @@ const AboutUs: FC = () => {
           }}
         >
           <Typography variant="body2" color="text.disabled">
-            Achievements
+            {t('achievements')}
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: 600, fontSize: 18 }}>
-            24/7 availability everywhere
+            {t('24-aviablability-everywhere')}
           </Typography>
           <Box
             sx={{
@@ -139,17 +142,10 @@ const AboutUs: FC = () => {
         <Grid item xs={12} sm={12} md={6}>
           <Box sx={{ px: { xs: 4, md: 10 }, py: 6 }}>
             <Typography variant="h6" fontWeight={600}>
-              About Us
+              {t('about-us')}
             </Typography>
             <Typography variant="body2" sx={{ mt: { xs: 1, md: 2 } }}>
-              Upload your organization help document and get instant answers to
-              your customer questions and resolve issues quickly with our
-              AI-powered customer support platform. Our advanced algorithms and
-              natural language processing capabilities allow us to understand
-              and respond to your inquiries faster and more accurately than ever
-              before. Whether you need help with a product or service, have a
-              question about your account, or want to provide feedback,
-              we&apos;re here to assist you 24/7.
+              {t('about-us-desc')}
             </Typography>
           </Box>
         </Grid>

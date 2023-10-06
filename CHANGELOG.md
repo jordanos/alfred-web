@@ -40,6 +40,7 @@ Types of changes
 - Custom global components[Modal, Table, Forms]
 - Persisted state to local
 - Authentication
+- Localization
 
 <!-- [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD -->
 

@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
-import storage from 'redux-persist/lib/storage';
-import { persistReducer, persistStore } from 'redux-persist';
 import appReducer from 'features/app/appSlice';
 import userReducer from 'features/auth/userSlice';
-import routingReducer from 'features/routing/routingSlice';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import { apiSlice } from './api/apiSlice';
 
 const persistConfig = {
@@ -19,7 +18,6 @@ export const store: ToolkitStore = configureStore({
     [apiSlice.reducerPath]: apiSlice.reducer,
     user: persistedUserReducer,
     app: appReducer,
-    routing: routingReducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware({ serializableCheck: false }).concat(

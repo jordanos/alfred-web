@@ -3,6 +3,7 @@ import { ReactComponent as Integration } from 'assets/svg/integration.svg';
 import { ReactComponent as Setting } from 'assets/svg/setting.svg';
 import { ReactComponent as Setup } from 'assets/svg/setup.svg';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import ServicesCard, { ServiceCardInitProps } from './ServicesCard';
 
 const services: ServiceCardInitProps[] = [
@@ -27,6 +28,8 @@ const services: ServiceCardInitProps[] = [
 ];
 
 const Services: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -44,7 +47,7 @@ const Services: FC = () => {
         fontSize={18}
         sx={{ my: 4 }}
       >
-        How Do We Work Our System
+        {t('how-do-we-work-our-system')}
       </Typography>
       <Box>
         {services.map((service, index) => (

@@ -10,16 +10,16 @@ import Services from './Services';
 
 export const elements: { [key: string]: { label: string } } = {
   AboutUs: {
-    label: 'About us',
+    label: 'about-us',
   },
   Services: {
-    label: 'Services',
+    label: 'services',
   },
   Pricing: {
-    label: 'Pricing',
+    label: 'pricing',
   },
   Community: {
-    label: 'Community',
+    label: 'community',
   },
 };
 

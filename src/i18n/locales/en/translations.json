@@ -1,9 +1,13 @@
 {
+  "about-us": "About us",
+  "services": "Services",
+  "pricing": "Pricing",
+  "community": "Community",
+  "join-for-free": "Join for free",
   "slogan-1": "Get instant answers",
   "slogan-2": "to your customer questions and resolve issues quickly.",
   "start-creating": "Start Creating",
   "achievements": "Achievements",
   "24-aviablability-everywhere": "24/7 availability everywhere",
-  "about-us": "About Us",
   "about-us-desc": "Upload your organization help document and get instant answers to your customer questions and resolve issues quickly with our AI-powered customer support platform. Our advanced algorithms and natural language processing capabilities allow us to understand and respond to your inquiries faster and more accurately than ever before. Whether you need help with a product or service, have a question about your account, or want to provide feedback, we're here to assist you 24/7."
 }

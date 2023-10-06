@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Button, Drawer, IconButton, Typography } from '@mui/material';
 import { toggleTheme } from 'features/auth/userSlice';
 import { FC, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { elements } from '.';
 
@@ -21,6 +22,7 @@ const NavItems: FC<NavProps> = ({ activeElement, goTo, setMobileNav }) => {
   const themeMode = useSelector((state) => {
     return state.user.theme;
   });
+  const { t } = useTranslation();
 
   return (
     <>
@@ -45,7 +47,7 @@ const NavItems: FC<NavProps> = ({ activeElement, goTo, setMobileNav }) => {
                 mt: { xs: 1.5, md: 0 },
               }}
             >
-              <Typography variant="body2">{elements[key].label}</Typography>
+              <Typography variant="body2">{t(elements[key].label)}</Typography>
               {isActive && (
                 <Box
                   sx={{
@@ -81,7 +83,7 @@ const NavItems: FC<NavProps> = ({ activeElement, goTo, setMobileNav }) => {
           mt: { xs: 6, md: 0 },
         }}
       >
-        Join for free
+        {t('join-for-free')}
       </Button>
     </>
   );

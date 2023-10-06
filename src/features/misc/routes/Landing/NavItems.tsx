@@ -14,6 +14,8 @@ import { toggleTheme } from 'features/auth/userSlice';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { publicPages } from 'routes/menu';
 import { elements } from '.';
 import { NavProps } from './Nav';
 
@@ -22,6 +24,7 @@ interface NavIemsProps extends NavProps {
 }
 
 const NavItems: FC<NavIemsProps> = ({ activeElement, goTo, setMobileNav }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const themeMode = useSelector((state) => {
     return state.user.theme;
@@ -146,6 +149,7 @@ const NavItems: FC<NavIemsProps> = ({ activeElement, goTo, setMobileNav }) => {
           ml: { xs: 0, md: 4 },
           mt: { xs: 6, md: 0 },
         }}
+        onClick={() => navigate(publicPages.login.path)}
       >
         {t('join-for-free')}
       </Button>

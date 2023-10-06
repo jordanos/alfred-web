@@ -7,6 +7,8 @@ import { ReactComponent as ProtectedDir } from 'assets/svg/protected-directory.s
 import { ReactComponent as SecureNegative } from 'assets/svg/secure-negative.svg';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { publicPages } from 'routes/menu';
 import AboutUsSmallCard from './AboutUsSmallCard';
 
 interface CounterProps {
@@ -33,6 +35,7 @@ const Counter: FC<CounterProps> = ({ text, count }) => {
 };
 
 const AboutUs: FC = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   return (
@@ -51,6 +54,7 @@ const AboutUs: FC = () => {
             </Typography>
             <Button
               variant="contained"
+              onClick={() => navigate(publicPages.login.path)}
               sx={{
                 textTransform: 'none',
                 mt: 4,

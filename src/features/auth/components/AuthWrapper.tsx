@@ -19,7 +19,11 @@ const AuthWrapper: FC<Props> = ({ children }) => {
           flexDirection: 'column',
         }}
       >
-        <Typography variant="overline" textAlign="center">
+        <Typography
+          variant="overline"
+          textAlign="center"
+          sx={{ mt: 0.5, fontSize: 12 }}
+        >
           A C S
         </Typography>
         {children}

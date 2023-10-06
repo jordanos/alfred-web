@@ -1,95 +1,14 @@
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Box, Button, Drawer, IconButton, Typography } from '@mui/material';
-import { toggleTheme } from 'features/auth/userSlice';
+import { Box, Drawer, IconButton, Typography } from '@mui/material';
 import { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { elements } from '.';
+import NavItems from './NavItems';
 
-interface Props {
+export interface NavProps {
   activeElement: string | number | undefined;
   goTo: Function;
 }
 
-interface NavProps extends Props {
-  setMobileNav: Function;
-}
-
-const NavItems: FC<NavProps> = ({ activeElement, goTo, setMobileNav }) => {
-  const dispatch = useDispatch();
-  const themeMode = useSelector((state) => {
-    return state.user.theme;
-  });
-  const { t } = useTranslation();
-
-  return (
-    <>
-      <Box sx={{ display: { xs: 'block', md: 'flex' } }}>
-        {Object.keys(elements).map((key) => {
-          const isActive = activeElement === key;
-
-          return (
-            <Box
-              key={key}
-              onClick={() => {
-                goTo(key);
-                setMobileNav(false);
-              }}
-              sx={{
-                cursor: 'pointer',
-                color: isActive ? 'primary.main' : 'text.primary',
-                mr: 8,
-                '&:last-child': {
-                  mr: 0,
-                },
-                mt: { xs: 1.5, md: 0 },
-              }}
-            >
-              <Typography variant="body2">{t(elements[key].label)}</Typography>
-              {isActive && (
-                <Box
-                  sx={{
-                    width: '70%',
-                    borderRadius: 5,
-                    height: 3,
-                    mt: 0.5,
-                    backgroundColor: 'primary.main',
-                  }}
-                />
-              )}
-            </Box>
-          );
-        })}
-      </Box>
-
-      <IconButton
-        size="small"
-        onClick={() => dispatch(toggleTheme({ payload: '' }))}
-        sx={{ ml: { xs: 0, md: 6 }, mt: { xs: 2, md: 0 }, maxWidth: 36 }}
-      >
-        {themeMode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
-      </IconButton>
-
-      <Button
-        variant="outlined"
-        size="large"
-        sx={{
-          color: 'text.primary',
-          textTransform: 'none',
-          fontWeight: 'bold',
-          ml: { xs: 0, md: 4 },
-          mt: { xs: 6, md: 0 },
-        }}
-      >
-        {t('join-for-free')}
-      </Button>
-    </>
-  );
-};
-
-const Nav: FC<Props> = ({ activeElement, goTo }) => {
+const Nav: FC<NavProps> = ({ activeElement, goTo }) => {
   const [mobileNav, setMobileNav] = useState(false);
 
   return (

@@ -5,6 +5,7 @@ const initUser: User = {
   isAuth: false,
   token: null,
   theme: 'dark',
+  lang: 'en',
 };
 
 const userSlice: Slice<User> = createSlice({
@@ -12,12 +13,14 @@ const userSlice: Slice<User> = createSlice({
   initialState: initUser,
   reducers: {
     setAuth: (state, { payload }) => {
-      console.log('p', payload);
       state.isAuth = payload.isAuth;
       state.token = payload.token;
     },
     toggleTheme: (state) => {
       state.theme = state.theme === 'dark' ? 'light' : 'dark';
+    },
+    changeLang: (state, { payload }) => {
+      state.lang = payload.lang;
     },
     logout: (state) => {
       state.isAuth = false;
@@ -26,5 +29,5 @@ const userSlice: Slice<User> = createSlice({
   },
 });
 
-export const { setAuth, toggleTheme, logout } = userSlice.actions;
+export const { setAuth, toggleTheme, logout, changeLang } = userSlice.actions;
 export default userSlice.reducer;

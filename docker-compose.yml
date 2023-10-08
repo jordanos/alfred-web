@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  web:
+    container_name: acs-web
+    build: .
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3000:80

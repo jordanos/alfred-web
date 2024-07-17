@@ -14,7 +14,6 @@ const ModalProvider: FC<Props> = ({ children }) => {
 
   const [payload, setPayload] = useState({
     title: '',
-    action: 'default',
     data: {},
   });
 

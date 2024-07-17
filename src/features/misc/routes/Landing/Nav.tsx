@@ -1,5 +1,6 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Drawer, IconButton, Typography } from '@mui/material';
+import { SYSTEM_PROVIDER } from 'constants/settings';
 import { FC, useState } from 'react';
 import NavItems from './NavItems';
 
@@ -31,8 +32,11 @@ const Nav: FC<NavProps> = ({ activeElement, goTo }) => {
         boxShadow: '0px 0px 3px -1px rgba(0,0,0,0.75)',
       }}
     >
-      <Typography variant="overline" fontSize={28} fontWeight={400}>
-        A C S
+      <Typography
+        variant="overline"
+        sx={{ fontSize: 26, fontWeight: 400, letterSpacing: 6 }}
+      >
+        {SYSTEM_PROVIDER}
       </Typography>
       <IconButton
         sx={{ display: { xs: 'block', md: 'none' } }}

@@ -55,7 +55,10 @@
     "import/prefer-default-export": "off",
     "import/no-cycle": "off",
     "object-curly-newline": "off",
-    "react/jsx-wrap-multilines": "off"
+    "react/jsx-wrap-multilines": "off",
+    "@typescript-eslint/return-await": "off",
+    "operator-linebreak": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   },
   "overrides": [
     {

@@ -1,4 +1,5 @@
 import { Container, Paper, Typography } from '@mui/material';
+import { SYSTEM_PROVIDER } from 'constants/settings';
 import { FC, ReactNode } from 'react';
 
 interface Props {
@@ -22,9 +23,9 @@ const AuthWrapper: FC<Props> = ({ children }) => {
         <Typography
           variant="overline"
           textAlign="center"
-          sx={{ mt: 0.5, fontSize: 12 }}
+          sx={{ mt: 0.5, fontSize: 12, letterSpacing: 6 }}
         >
-          A C S
+          {SYSTEM_PROVIDER}
         </Typography>
         {children}
       </Paper>

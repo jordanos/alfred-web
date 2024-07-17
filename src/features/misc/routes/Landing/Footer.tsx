@@ -3,6 +3,7 @@ import { FC } from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { useTranslation } from 'react-i18next';
+import { SYSTEM_PROVIDER } from 'constants/settings';
 
 const Footer: FC = () => {
   const theme = useTheme();
@@ -22,7 +23,7 @@ const Footer: FC = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={6}>
           <Typography variant="h5" fontWeight={300}>
-            ACS
+            {SYSTEM_PROVIDER}
           </Typography>
           <Typography
             variant="body2"

@@ -1,9 +1,8 @@
 import { createContext } from 'react';
 
-export type ModalNames = 'md1' | 'md2' | 'md3' | 'md4';
+export type ModalNames = 'md1' | 'md2' | 'md3' | 'delete';
 export type Payload = {
   title: string;
-  action: string;
   data: object;
 };
 export type ToggleModal = (modalName: ModalNames, payload: Payload) => void;
@@ -17,9 +16,10 @@ export const defaultModals = {
   md1: false,
   md2: false,
   md3: false,
-  md4: false,
+  delete: false,
+  users: false,
 };
-export const defaultPayload = { title: '', action: 'default', data: {} };
+export const defaultPayload = { title: '', data: {} };
 
 export const ModalContext = createContext<ModalContextType>({
   modals: defaultModals,

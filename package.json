@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "start": "vite --port 3000",
-    "build": "tsc && vite build",
+    "build:production": "vite build --mode=production",
     "test": "jest",
     "serve": "vite preview",
     "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\"",

@@ -1,0 +1,65 @@
+name: Continues Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: main
+  cancel-in-progress: true
+
+jobs:
+  quality-assurance:
+    name: Quality Assurance
+    uses: ./.github/workflows/quality-assurance.yaml
+
+  deploy:
+    name: Deploy
+    needs: quality-assurance
+    runs-on: ubuntu-latest
+    env:
+      API_URL: ${{ secrets.API_URL }}
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      V_GITHUB_CLIENT_ID: ${{ secrets.V_GITHUB_CLIENT_ID }}
+      V_GITHUB_SECRET: ${{ secrets.V_GITHUB_SECRET }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_USER: ${{ secrets.SSH_USER }}
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Build project
+        run: |
+          echo -e "VITE_DEBUG=false \nVITE_API_URL="$API_URL" \nVITE_GOOGLE_CLIENT_ID="$GOOGLE_CLIENT_ID" \nVITE_GITHUB_CLIENT_ID="$V_GITHUB_CLIENT_ID" \nVITE_GITHUB_SECRET="$V_GITHUB_SECRET"" > ./env/.env.production.local
+          HUSKY=0 npm install --legacy-peer-deps
+          npm run build:production
+          tar -cvf dist.tar ./dist
+
+      - name: Configure ssh
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/github
+          chmod 600 ~/.ssh/github
+          cat >>~/.ssh/config <<END
+          Host target
+            Hostname $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/github
+            LogLevel ERROR
+            StrictHostKeyChecking no
+          END
+
+      - name: Run deploy
+        run: |
+          scp dist.tar target:/usr/share/nginx/alfred/alfred-web/
+          echo "Dist copied to server"
+          ssh target "cd /usr/share/nginx/alfred/alfred-web/ && tar -xvf dist.tar && rm dist.tar&&systemctl reload nginx && exit"
+          echo "Deployed!"

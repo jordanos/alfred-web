@@ -1,0 +1,24 @@
+name: Quality Assurance
+
+on: [pull_request, workflow_call]
+
+jobs:
+  quality-assurance:
+    name: Quality Assurance
+
+    # TODO(dmu) LOW: Consider using Debian Buster (the same as docker image is based on) if it is easy to do
+    runs-on: ubuntu-latest
+    container: node:18.0.0
+
+    steps:
+      # TODO(dmu) LOW: Implement caching
+      - uses: actions/checkout@v4
+
+      - name: Install
+        run: HUSKY=0 npm install --legacy-peer-deps
+
+      # - name: Lint
+      #   run: npm run lint
+
+      - name: Test
+        run: npm run test

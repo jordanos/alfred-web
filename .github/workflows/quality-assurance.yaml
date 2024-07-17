@@ -2,14 +2,15 @@ name: Quality Assurance
 
 on: [pull_request, workflow_call]
 
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
 jobs:
   codeql:
     name: Analyze with codeql
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
     strategy:
       fail-fast: false
       matrix:

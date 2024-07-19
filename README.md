@@ -2,6 +2,8 @@
 
 This is the web client for [alfred](https://github.com/jordanos/alfred) API.
 
+**[DEMO](https://alfred.shegapps.com)**
+
 ## Quick Install
 
 We are using [pnpm](https://pnpm.io/) to manage our dependencies and we suggest you do the same.

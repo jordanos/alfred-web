@@ -10,19 +10,19 @@ const services: ServiceCardInitProps[] = [
   {
     id: '01',
     title: 'Setup',
-    text: 'Register, login and create your AI chat-bot. Upload documents(txt, pdf) that the bot will refer to answer your customer questions and customize it to meet your needs.',
+    text: 'Register, login and create a space for your app. Upload documents(txt, pdf) that Alfred will refer to answer questions. Install plugins to get realtime information from database and more.',
     Icon: Setup,
   },
   {
     id: '02',
     title: 'Test & Fine-tune',
-    text: 'Use the chatting playground feature to optimize and test the bot.',
+    text: 'Use the chatting playground feature to optimize and test Alfred.',
     Icon: Setting,
   },
   {
     id: '03',
     title: 'Integration',
-    text: 'Get an API key and integrate the bot to your organization website or mobile app.',
+    text: 'Get an API key and integrate Alfred to your SaaS product.',
     Icon: Integration,
   },
 ];

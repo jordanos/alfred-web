@@ -1,10 +1,12 @@
 {
-  "name": "ai-customer-support-web",
+  "name": "alfred-web",
   "version": "0.0.0",
-  "description": "Web client for ai-customer-support",
+  "description": "A web client for alfred.",
   "keywords": [
     "vite",
-    "react"
+    "react",
+    "redux",
+    "mui"
   ],
   "scripts": {
     "start": "vite --port 3000",

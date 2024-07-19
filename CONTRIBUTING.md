@@ -1,6 +1,6 @@
-# Contributing to AI-customer-support
+# Contributing to Alfred-web
 
-Hi there! Thank you for even being interested in contributing to AI-customer-support.
+Hi there! Thank you for even being interested in contributing to Alfred-web.
 Any kind of contribution(bug fix, new feature, better documentation...) is extremely welcomed.
 
 ## 🗺️ Guidelines

@@ -1,6 +1,6 @@
-# 🤖 AI customer support web
+# 🤖 Alfred web
 
-This is the web client for [ai-customer-support](https://github.com/jordanos/ai-customer-support) API.
+This is the web client for [alfred](https://github.com/jordanos/alfred) API.
 
 ## Quick Install
 
